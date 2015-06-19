@@ -1,0 +1,21 @@
+.fancyfont {
+  font-family: 'Wallpoet', cursive;
+}
+
+.muted {
+ opacity: 0.5;
+}
+
+.smallertitle {
+  font-size: 75%;
+}
+
+.btn-navspecial {
+  color: #888888;
+  background-color: #060606;
+
+}
+
+.fontsize {
+  font-size: 175%;
+}

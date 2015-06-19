@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'dj-messageboard',
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
-    firebase: 'https://YOUR-FIREBASE-NAME.firebaseio.com/',
+    firebase: 'https://dj-messageboard.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -21,14 +21,14 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-     'default-src': "'none'",
-     'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
-     'font-src': "'self'",
-     'connect-src': "'self'",
-     'img-src': "'self'",
-     'style-src': "'self' 'unsafe-inline'",
-     'frame-src': "'none'"
-   }
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://dj-messageboard.firebaseio.com",
+      'img-src': "",
+      'style-src': "'self' 'unsafe-inline'",
+      'frame-src': "'none' https://dj-messageboard.firebaseio.com"
+    }
   };
 
   if (environment === 'development') {

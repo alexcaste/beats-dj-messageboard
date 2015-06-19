@@ -1,0 +1,66 @@
+<div class=" well">
+    <button class="btn btn-xs btn-danger "  {{action 'deleteQuestion'}}>Delete Question</button>
+    <button class="btn btn-xs btn-warning col-md-offset-10" {{action 'editQuestion'}}>Edit Question</button>
+
+    {{#if isEditing}}
+      <form>
+        <div class="form-group">
+          <label for="question">Question</label>
+          {{input value=question id="question" class="form-control"}}
+        </div>
+
+        <div class="form-group">
+          <label for="author">Author</label>
+          {{input value=author id="author" class="form-control"}}
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          {{textarea value=description id="description" class="form-control" rows="5"}}
+        </div>
+        <button class="btn btn-primary btn-block" {{action 'saveQuestion'}}>Save</button>
+      </form>
+    {{else}}
+
+      <h2 class=" fancyfont text-success">{{model.text}}</h2>
+      <hr>
+      <p><span class="title"> author:&nbsp;&nbsp;</span> {{model.author}}</p>
+      <p><span class="title"> description:&nbsp;&nbsp;</span>{{model.description}}</p>
+      <br>
+      <div class="well">
+        <h4>answers:</h4>
+        <hr>
+        <ul class="list-unstyled">
+          {{#each answer in model.answers}}
+
+            <li class="rating">{{answer.text}} <br> by {{answer.author}}</li>
+            <br>
+            {{/each}}
+          </ul>
+        </div>
+    <p><button class="btn btn-default btn-lg btn-block" {{action 'showModal' 'rating-modal' model.id}}>add new answer</button></p>
+    {{outlet}}
+    {{outlet 'modal'}}
+
+    {{/if}}
+</div>
+
+
+    <h2>Answers</h2>
+    {{#each answer in answers}}
+    <div class="row well clearfix">
+      <div class="col-md-8 column">
+
+        <p>
+          <button class="btn btn-xs btn-danger" {{action 'deleteAnswer' answer}} ><span class="glyphicon glyphicon-remove"></span> </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <strong>{{answer.poster}} says:</strong>
+        </p>
+        <p class ="col-md-offset-1">
+          {{answer.text}}
+        </p>
+      </div>
+    </div>
+
+    {{/each}}
+    {{outlet}}
