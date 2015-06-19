@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
   actions: {
     save: function() {
       var question = this.store.createRecord('question', {
@@ -8,6 +8,7 @@ export default Ember.ObjectController.extend({
         author: this.get('author'),
         description: this.get('description')
       });
+      debugger;
       question.save();
 
       this.set('question', '');

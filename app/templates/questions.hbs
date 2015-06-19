@@ -8,17 +8,18 @@
         {{#each question in model}}
 
         <li>
-          <span class="fancyfont">{{#link-to 'question' question.id}}{{question.text}}{{/link-to}}</span>
+          <blockquote>
+            <p>
+              <span class="fancyfont">{{#link-to 'question' question.id}}{{question.text}}{{/link-to}}</span>
+            </p>
+            <footer><cite>{{question.author}}  ({{post-date question.date}})</cite></footer>
+          </blockquote>
         </li>
-        <br>
         {{/each}}
       </ul>
     </div>
   </div>
-
-
-
-
+  
 <div class='col-md-8'>
     {{outlet}}
 </div>
