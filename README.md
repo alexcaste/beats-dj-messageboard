@@ -2,7 +2,18 @@
 
 This README outlines the details of collaborating on this Ember application.
 
-A message board for DJ's written in Ember CLI
+A message board for DJ's written in Ember CLI.  
+
+This app allows users to post questions and receive answers to those questions.  Questions and answers can be deleted.  Questions can be edited.  
+
+This app uses the Cyborg Bootswatch.  
+
+Replace
+  ./bower_components/bootstrap/dist/css/boostrap.css
+and
+  ./bower_components/bootstrap/dist/css/boostrap.min.css
+
+with the bootstrap.css and bootstrap.min.css files found at https://bootswatch.com/cyborg/
 
 ## Prerequisites
 
