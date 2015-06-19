@@ -39,6 +39,7 @@ export default Ember.ObjectController.extend({
        poster: this.get('poster'),
        body: this.get('body'),
      });
+     debugger;
 
      answer.save().then(function() {
        question.get('answers').pushObject(answer);

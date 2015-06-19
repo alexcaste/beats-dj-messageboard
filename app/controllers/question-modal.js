@@ -8,7 +8,6 @@ export default Ember.Controller.extend({
         author: this.get('author'),
         description: this.get('description')
       });
-      debugger;
       question.save();
 
       this.set('question', '');
