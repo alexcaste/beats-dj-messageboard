@@ -19,3 +19,7 @@
 .fontsize {
   font-size: 175%;
 }
+
+.well blockquote {
+border-color: rgba(87,54,142,0.4);
+}

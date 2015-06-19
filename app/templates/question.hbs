@@ -1,12 +1,14 @@
-<div class=" well">
-    <button class="btn btn-xs btn-danger "  {{action 'deleteQuestion'}}>Delete Question</button>
-    <button class="btn btn-xs btn-warning col-md-offset-10" {{action 'editQuestion'}}>Edit Question</button>
-
+<div class="col-md-12">
+  <div class="row well">
+    <button class="btn btn-xs btn-warning "  {{action 'deleteQuestion'}}>Delete Question</button>
+    <button class="btn btn-xs btn-info col-md-offset-10" {{action 'editQuestion'}}>Edit Question</button>
+    <br>
+    <br>
     {{#if isEditing}}
       <form>
         <div class="form-group">
-          <label for="question">Question</label>
-          {{input value=question id="question" class="form-control"}}
+          <label for="text">Question</label>
+            {{input value=text id="text" class="form-control"}}
         </div>
 
         <div class="form-group">
@@ -18,49 +20,52 @@
           <label for="description">Description</label>
           {{textarea value=description id="description" class="form-control" rows="5"}}
         </div>
-        <button class="btn btn-primary btn-block" {{action 'saveQuestion'}}>Save</button>
+        <button class="btn btn-success btn-xs btn-block" {{action 'saveQuestion'}}>Save</button>
       </form>
     {{else}}
 
+      <p class="lead muted">
+        {{model.author}} asks:
+      </p>
       <h2 class=" fancyfont text-success">{{model.text}}</h2>
       <hr>
-      <p><span class="title"> author:&nbsp;&nbsp;</span> {{model.author}}</p>
-      <p><span class="title"> description:&nbsp;&nbsp;</span>{{model.description}}</p>
+      <p>{{model.description}}</p>
       <br>
-      <div class="well">
-        <h4>answers:</h4>
-        <hr>
-        <ul class="list-unstyled">
-          {{#each answer in model.answers}}
+    {{/if}}
+  </div>
 
-            <li class="rating">{{answer.text}} <br> by {{answer.author}}</li>
-            <br>
+  <div class="row">
+    {{#if newAnswer}}
+      <div class="well">
+        {{partial 'question/_new-answer'}}
+        <br>
+      </div>
+    {{else}}
+      <div class="row">
+        <div class="col-md-12">
+          <br>
+            <p><button class="btn btx-xs btn-success btn-block" {{action 'addAnswer'}}>Add Your Answer</button></p>
+        </div>
+      </div>
+      <br>
+      <div class="row ">
+        <div class="col-md-12">
+          <ul class="list-unstyled">
+            {{#each answer in model.answers}}
+              <li class="well">
+                <blockquote>
+                  <p>
+                    {{answer.body}}
+                    <button class="btn btn-warning btn-xs pull-right"{{action 'deleteAnswer' answer}}>X</button>
+                  </p>
+                  <footer><cite>{{answer.poster}}</cite></footer>
+                </blockquote>
+              </li>
             {{/each}}
           </ul>
+
         </div>
-    <p><button class="btn btn-default btn-lg btn-block" {{action 'showModal' 'rating-modal' model.id}}>add new answer</button></p>
-    {{outlet}}
-    {{outlet 'modal'}}
-
-    {{/if}}
-</div>
-
-
-    <h2>Answers</h2>
-    {{#each answer in answers}}
-    <div class="row well clearfix">
-      <div class="col-md-8 column">
-
-        <p>
-          <button class="btn btn-xs btn-danger" {{action 'deleteAnswer' answer}} ><span class="glyphicon glyphicon-remove"></span> </button>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <strong>{{answer.poster}} says:</strong>
-        </p>
-        <p class ="col-md-offset-1">
-          {{answer.text}}
-        </p>
       </div>
-    </div>
-
-    {{/each}}
-    {{outlet}}
+    {{/if}}
+  </div>
+</div>
