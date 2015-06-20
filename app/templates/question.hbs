@@ -54,7 +54,7 @@
                       {{answer.body}}
                       <button class="btn btn-warning btn-xs pull-right"{{action 'deleteAnswer' answer}}>X</button>
                     </p>
-                    <footer><cite>{{answer.poster}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ({{post-date answer.date}})</cite></footer>
+                    <footer><cite>{{answer.poster}}&nbsp;answered {{post-date answer.date}}</cite></footer>
                   </blockquote>
                 </li>
               {{/each}}

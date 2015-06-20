@@ -6,14 +6,15 @@ export default Ember.Controller.extend({
       var question = this.store.createRecord('question', {
         text: this.get('text'),
         author: this.get('author'),
-        description: this.get('description')
+        description: this.get('description'),
+        date: new Date(),
+        numberOfAnswers: 0
       });
       question.save();
 
-      this.set('question', '');
+      this.set('text', '');
       this.set('author', '');
       this.set('description', '');
-
 
       this.transitionToRoute('questions');
     }

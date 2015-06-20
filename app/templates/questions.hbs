@@ -11,8 +11,9 @@
           <blockquote>
             <p>
               <span class="fancyfont">{{#link-to 'question' question.id}}{{question.text}}{{/link-to}}</span>
+              <span class="pull-right showanswers">{{question.numberOfAnswers}} answers</span>
             </p>
-            <footer><cite>{{question.author}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ({{post-date question.date}})</cite></footer>
+            <footer><cite>{{question.author}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (asked {{post-date question.date}})</cite></footer>
           </blockquote>
         </li>
         {{/each}}
@@ -20,7 +21,7 @@
     </div>
   </div>
 
-<div class='col-md-8'>
+<div class='col-md-8 joker'>
     {{outlet}}
 </div>
 </div>

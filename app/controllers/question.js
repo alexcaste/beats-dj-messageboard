@@ -38,13 +38,17 @@ export default Ember.ObjectController.extend({
      var answer = this.store.createRecord('answer', {
        poster: this.get('poster'),
        body: this.get('body'),
+       date: new Date()
      });
-     debugger;
-
      answer.save().then(function() {
        question.get('answers').pushObject(answer);
        question.save();
      });
+
+     var numberOfAnswers = question.get('numberOfAnswers') + 1;
+     question.set('numberOfAnswers', numberOfAnswers).save();
+debugger;
+
      this.set('newAnswer', false);
 
      this.setProperties({

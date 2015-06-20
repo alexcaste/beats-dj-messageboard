@@ -23,3 +23,15 @@
 .well blockquote {
 border-color: rgba(87,54,142,0.4);
 }
+
+.showanswers {
+  color: white;
+  font-size: 75%;
+  opacity: 0.5;
+}
+
+
+
+.joker {
+     background-image: #ffffff url('../img/background.jpg') no-repeat center center;
+}
