@@ -47,7 +47,6 @@ export default Ember.ObjectController.extend({
 
      var numberOfAnswers = question.get('numberOfAnswers') + 1;
      question.set('numberOfAnswers', numberOfAnswers).save();
-debugger;
 
      this.set('newAnswer', false);
 

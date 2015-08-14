@@ -30,7 +30,18 @@ border-color: rgba(87,54,142,0.4);
   opacity: 0.5;
 }
 
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
 
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.mynavbar {
+  text-align: right;
+}
 
 .joker {
      background-image: #ffffff url('../img/background.jpg') no-repeat center center;
