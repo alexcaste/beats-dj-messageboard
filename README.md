@@ -8,6 +8,12 @@ This app allows users to post questions and receive answers to those questions. 
 
 This app uses the Cyborg Bootswatch.  
 
+This app is currently deployed at:
+
+http://dj-messageboard.firebaseapp.com/
+
+Note: there is a bug preventing chrome from loading the google font webpoet.  To view the site properly in chrome please click the shield in the upper right nad corner of the browser address bar and click "load unsafe scripts."  This issue of google determining its' own fonts as unsafe seems to be well known and well documented.  
+
 Replace
   ./bower_components/bootstrap/dist/css/boostrap.css
 and
