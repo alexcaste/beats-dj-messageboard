@@ -18,12 +18,6 @@ install:
   - npm install -g bower
   - npm install
   - bower install
-  - npm install -g firebase-tools
 
 script:
   - npm test
-  - echo 'Hello Beats DJ'
-
-after_success:
-
-  - firebase deploy --email ${FIREBASE_USERNAME} --password ${FIREBASE_PASSWORD}

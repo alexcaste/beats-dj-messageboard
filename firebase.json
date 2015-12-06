@@ -1,6 +1,6 @@
 {
   "firebase": "dj-messageboard",
-  "public": "app",
+  "public": "./dist",
   "ignore": [
     "firebase.json",
     "**/.*",
